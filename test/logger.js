@@ -1,3 +1,5 @@
+"use strict"
+
 var assert = require('assert')
 
 describe('logger', function() {
@@ -11,6 +13,7 @@ describe('logger', function() {
     })
     document.body.appendChild(result)
   })
+
   afterEach(function() {
     document.body.removeChild(result)
   })
@@ -19,15 +22,19 @@ describe('logger', function() {
     var results = []
     logger.on('data', function onData(data) {
       results.push(Number(data))
-      if (results.length > 3) {
-        logger.removeListener('data', onData)
-        results.reduce(function(previous, current) {
-          if (!previous) return current
-          assert.equal(previous + 1, current)
-          return current
-        }, undefined)
-        done()
-      }
+
+      if (results.length < 3) return
+
+      logger.removeListener('data', onData)
+
+      results.reduce(function(previous, current) {
+        if (!previous) return current
+        // ensure results are sequential numbers
+        assert.equal(previous + 1, current)
+        return current
+      }, undefined)
+
+      done()
     })
   })
 })
