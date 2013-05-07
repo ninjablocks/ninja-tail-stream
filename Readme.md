@@ -1,18 +1,19 @@
-# Tail Stream
+ninja-tail-stream
+=================
 
-Stream a tail -f to the browser.
+Tail Dash F in a Stream
 
 ## Example
 ### Server
 ```shell
 # Spin up logger service monitoring /some/log/file.log on port 9090
-./bin/logger -f /some/log/file.log -p 9090
+./bin/tail-stream -f /some/log/file.log -p 9090
 ```
 
 ### Client
 
 ```js
-var logger = require('../client')({
+var ts = require('../client')({
   url: 'http://localhost:9090/logs',
   el: document.querySelector('#logs')
 })
@@ -20,7 +21,7 @@ var logger = require('../client')({
 
 ## Building 
 ```shell
-make # built files in ./build/build.js
+make # built files live in ./build/build.js
 ```
 
 ## Running Tests
