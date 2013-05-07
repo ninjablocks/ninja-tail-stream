@@ -13,9 +13,9 @@ setInterval(function() {
 
 // boot server under test
 var server = require('../index')({
-  file: LOG_FILE,
-  port: 9090
-})
+  file: LOG_FILE
+}).listen(9090)
+
 // host test/build files
 var ecstatic = require('ecstatic');
 var http = require('http');
