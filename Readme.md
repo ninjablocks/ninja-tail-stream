@@ -1,4 +1,4 @@
-# Log Stream
+# Tail Stream
 
 Stream a tail -f to the browser.
 

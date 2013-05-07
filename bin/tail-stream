@@ -8,11 +8,13 @@ var program = require('commander');
 
 program
   .version('0.0.1')
-  .option('-f, --file [file]', 'File to watch')
+  .option('-f, --file file', 'File to follow')
   .option('-p, --port [port]', 'Port to listen on [port]', 9090)
   .parse(process.argv);
 
-var app = require('../')(program, function(err) {
+var app = require('../')(program)
+
+app.listen(program.port, function(err) {
   if (err) throw err
   console.log("Listening on", app.address().port)
 })
