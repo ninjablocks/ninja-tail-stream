@@ -15,7 +15,7 @@
     "commander": "~1.1.1"
   },
   "bin": {
-    "tail-stream": "./bin/tail-stream.js"
+    "tail-stream": "./bin/tail-stream"
   },
   "devDependencies": {
     "ecstatic": "~0.4.2",
