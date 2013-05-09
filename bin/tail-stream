@@ -8,7 +8,7 @@ var program = require('commander');
 
 program
   .version('0.0.1')
-  .option('-f, --file file', 'File to follow')
+  .option('-f, --file <file>', 'File to follow')
   .option('-p, --port [port]', 'Port to listen on [port]', 9090)
   .parse(process.argv);
 
