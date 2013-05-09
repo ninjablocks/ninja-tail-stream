@@ -7,6 +7,7 @@ var app = http.createServer()
 
 module.exports = function(options, cb) {
   if (typeof options === 'function') cb = options, options = undefined
+  if(typeof cb !== 'function') { cb = function(err) { if(err) { throw err; }}}
   options = options || {}
   if (!options.file || typeof options.file !== 'string') return cb(new Error('file path required'))
 
