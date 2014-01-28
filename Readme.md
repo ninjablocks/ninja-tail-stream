@@ -29,3 +29,7 @@ make # built files live in ./build/build.js
 ```shell
 make test
 ```
+
+## License
+Copyright (c) 2013 Ninja Blocks
+Licensed under the MIT license.
