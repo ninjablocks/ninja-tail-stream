@@ -4,11 +4,11 @@
   "description": "Tail Dash F in a Stream.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
-  "repository": "",
-  "author": "",
-  "license": "BSD",
+  "repository": "https://github.com/ninjablocks/ninja-tail-stream.git",
+  "author": "Ninja Blocks",
+  "license": "MIT",
   "dependencies": {
     "slice-file": "~0.1.5",
     "shoe": "0.0.10",
